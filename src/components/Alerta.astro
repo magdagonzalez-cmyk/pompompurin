@@ -1,0 +1,15 @@
+---
+// Alerta.astro
+// Recibe el nombre del amigo y el mensaje que te deja en la pantalla
+const { amigo = "Pompompurin", mensaje } = Astro.props;
+---
+
+<div>
+    <!-- Identificamos qué personaje está hablando -->
+    <span>
+        {amigo === "Muffin" && "🐹 [Muffin el Hámster]:"}
+        {amigo === "Macaroon" && "🐾 [Macaroon la Caniche]:"}
+        {amigo === "Pompompurin" && "🍮 [Purin]:"}
+    </span>
+    <p>"{mensaje}"</p>
+</div>

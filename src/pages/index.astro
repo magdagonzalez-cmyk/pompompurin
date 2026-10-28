@@ -1,17 +1,42 @@
 ---
-
+import Navbar from "../components/Navbar.astro";
+import Alerta from "../components/Alerta.astro";
+import Footer from "../components/Footer.astro";
 ---
 
+<!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>El rincón de Pompompurin</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Navbar />
+
+		<main>
+			<h1>¡Bienvenidos a mi rincón de Pompompurin! 🥞</h1>
+			<p>
+				Hola, soy un perrito Golden Retriever que sueña con ser aún más
+				grande. ¡Me encanta coleccionar zapatos y dormir siestas!
+			</p>
+
+			<h2>Mensajes de mis amigos hoy:</h2>
+			<!-- Reutilizamos el componente "Alerta" pasándole diferentes amigos de Sanrio -->
+			<Alerta
+				amigo="Pompompurin"
+				mensaje="¡No olvides guardar espacio para el postre!"
+			/>
+			<Alerta
+				amigo="Muffin"
+				mensaje="¿Alguien dijo nueces? ¡Voy hacia allá!"
+			/>
+			<Alerta
+				amigo="Macaroon"
+				mensaje="Hoy es un día perfecto para dar un paseo por el parque."
+			/>
+		</main>
+
+		<Footer />
 	</body>
 </html>
