@@ -1,0 +1,63 @@
+---
+// Navbar.astro
+// Aquí podemos definir los enlaces en una lista para hacer el código más limpio
+const enlaces = [
+    { nombre: "Inicio", ruta: "/" },
+    { nombre: "Sobre Mí", ruta: "/sobre-mi" },
+    { nombre: "Blog", ruta: "/blog" },
+    { nombre: "Contacto", ruta: "/contacto" },
+];
+---
+
+<nav class="navbar">
+    <div class="logo">
+        <a href="/">✨ MiSitio</a>
+    </div>
+    <ul class="menu">
+        {
+            enlaces.map((enlace) => (
+                <li>
+                    <a href={enlace.ruta}>{enlace.nombre}</a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #1e1e2e;
+        color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo a {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .menu {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu a {
+        color: #cdd6f4;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .menu a:hover {
+        color: #89b4fa;
+    }
+</style>
